@@ -1,0 +1,11 @@
+{% for film in films %}
+    <div>
+        <h3>{{ film.title }}</h3>
+        <p>{{ film.releaseYear }}</p>
+        <a href="{{ path('film_show', {id: film.id}) }}">Voir détails</a>
+    </div>
+{% else %}
+    <p>Aucun film disponible.</p>
+{% endfor %}
+
+{{ knp_pagination_render(films) }}

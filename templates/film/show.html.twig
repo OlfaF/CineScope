@@ -1,0 +1,18 @@
+<h1>{{ film.title }}</h1>
+
+<p>{{ film.synopsis }}</p>
+<p>Année : {{ film.releaseYear }}</p>
+
+<h3>Disponible sur :</h3>
+
+<ul>
+    {% for platforme in film.platformes %}
+        <li>
+            <a href="{{ platforme.url }}" target="_blank">
+                {{ platforme.name }}
+            </a>
+        </li>
+    {% else %}
+        <li>Aucune plateforme</li>
+    {% endfor %}
+</ul>
