@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\PlatformeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -9,10 +10,12 @@ use Symfony\Component\Routing\Attribute\Route;
 final class PlatformesController extends AbstractController
 {
     #[Route('/platformes', name: 'app_platformes')]
-    public function index(): Response
+    public function index(PlatformeRepository $platRepo): Response
     {
+
+    $plateforms = $platRepo->findAll();
         return $this->render('platformes/index.html.twig', [
-            'controller_name' => 'PlatformesController',
+            'plateforms' => $plateforms,
         ]);
     }
 }
