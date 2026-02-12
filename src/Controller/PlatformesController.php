@@ -13,9 +13,9 @@ final class PlatformesController extends AbstractController
     public function index(PlatformeRepository $platRepo): Response
     {
 
-    $plateforms = $platRepo->findAll();
+    $platforms = $platRepo->findAll();
         return $this->render('platformes/index.html.twig', [
-            'plateforms' => $plateforms,
+            'platforms' => $platforms,
         ]);
     }
 }
