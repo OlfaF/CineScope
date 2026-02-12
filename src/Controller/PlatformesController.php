@@ -18,4 +18,13 @@ final class PlatformesController extends AbstractController
             'platforms' => $platforms,
         ]);
     }
+     #[Route('/platformes/{id}', name: 'show_platforme')]
+    public function show(PlatformeRepository $platRepo): Response
+    {
+
+    $platforms = $platRepo->findAll();
+        return $this->render('platformes/show.html.twig', [
+            'platforms' => $platforms,
+        ]);
+    }
 }

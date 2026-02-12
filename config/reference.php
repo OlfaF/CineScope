@@ -1477,13 +1477,6 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     convert_exception?: bool|Param, // Default: false
  *     remove_first_page_param?: bool|Param, // Default: false
  * }
-<<<<<<< HEAD
- * @psalm-type ConfigType = array{
- *     imports?: ImportsConfig,
- *     parameters?: ParametersConfig,
- *     services?: ServicesConfig,
-=======
-<<<<<<< HEAD
  * @psalm-type TwigComponentConfig = array{
  *     defaults?: array<string, string|array{ // Default: ["__deprecated__use_old_naming_behavior"]
  *         template_directory?: scalar|Param|null, // Default: "components"
@@ -1500,13 +1493,6 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     imports?: ImportsConfig,
  *     parameters?: ParametersConfig,
  *     services?: ServicesConfig,
-=======
- * @psalm-type ConfigType = array{
- *     imports?: ImportsConfig,
- *     parameters?: ParametersConfig,
- *     services?: ServicesConfig,
->>>>>>> 67d6759e44a57660f2fb9da69c5059efe18ff373
->>>>>>> 0e7a5fd40cbaa79ad26d61a8f1f45513bf791522
  *     framework?: FrameworkConfig,
  *     doctrine?: DoctrineConfig,
  *     doctrine_migrations?: DoctrineMigrationsConfig,
@@ -1516,24 +1502,11 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     twig_extra?: TwigExtraConfig,
  *     security?: SecurityConfig,
  *     monolog?: MonologConfig,
-<<<<<<< HEAD
  *     knp_paginator?: KnpPaginatorConfig,
- *     "when@dev"?: array{
- *         imports?: ImportsConfig,
- *         parameters?: ParametersConfig,
-=======
- *     knp_paginator?: KnpPaginatorConfig,
-<<<<<<< HEAD
  *     twig_component?: TwigComponentConfig,
  *     "when@dev"?: array{
  *         imports?: ImportsConfig,
  *         parameters?: ParametersConfig,
-=======
- *     "when@dev"?: array{
- *         imports?: ImportsConfig,
- *         parameters?: ParametersConfig,
->>>>>>> 67d6759e44a57660f2fb9da69c5059efe18ff373
->>>>>>> 0e7a5fd40cbaa79ad26d61a8f1f45513bf791522
  *         services?: ServicesConfig,
  *         framework?: FrameworkConfig,
  *         doctrine?: DoctrineConfig,
@@ -1547,27 +1520,12 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         security?: SecurityConfig,
  *         monolog?: MonologConfig,
  *         maker?: MakerConfig,
-<<<<<<< HEAD
  *         knp_paginator?: KnpPaginatorConfig,
- *     },
- *     "when@prod"?: array{
- *         imports?: ImportsConfig,
- *         parameters?: ParametersConfig,
-=======
- *         knp_paginator?: KnpPaginatorConfig,
-<<<<<<< HEAD
  *         twig_component?: TwigComponentConfig,
  *     },
  *     "when@prod"?: array{
  *         imports?: ImportsConfig,
  *         parameters?: ParametersConfig,
-=======
- *     },
- *     "when@prod"?: array{
- *         imports?: ImportsConfig,
- *         parameters?: ParametersConfig,
->>>>>>> 67d6759e44a57660f2fb9da69c5059efe18ff373
->>>>>>> 0e7a5fd40cbaa79ad26d61a8f1f45513bf791522
  *         services?: ServicesConfig,
  *         framework?: FrameworkConfig,
  *         doctrine?: DoctrineConfig,
@@ -1578,27 +1536,12 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         twig_extra?: TwigExtraConfig,
  *         security?: SecurityConfig,
  *         monolog?: MonologConfig,
-<<<<<<< HEAD
  *         knp_paginator?: KnpPaginatorConfig,
- *     },
- *     "when@test"?: array{
- *         imports?: ImportsConfig,
- *         parameters?: ParametersConfig,
-=======
- *         knp_paginator?: KnpPaginatorConfig,
-<<<<<<< HEAD
  *         twig_component?: TwigComponentConfig,
  *     },
  *     "when@test"?: array{
  *         imports?: ImportsConfig,
  *         parameters?: ParametersConfig,
-=======
- *     },
- *     "when@test"?: array{
- *         imports?: ImportsConfig,
- *         parameters?: ParametersConfig,
->>>>>>> 67d6759e44a57660f2fb9da69c5059efe18ff373
->>>>>>> 0e7a5fd40cbaa79ad26d61a8f1f45513bf791522
  *         services?: ServicesConfig,
  *         framework?: FrameworkConfig,
  *         doctrine?: DoctrineConfig,
@@ -1610,15 +1553,8 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         twig_extra?: TwigExtraConfig,
  *         security?: SecurityConfig,
  *         monolog?: MonologConfig,
-<<<<<<< HEAD
  *         knp_paginator?: KnpPaginatorConfig,
-=======
- *         knp_paginator?: KnpPaginatorConfig,
-<<<<<<< HEAD
  *         twig_component?: TwigComponentConfig,
-=======
->>>>>>> 67d6759e44a57660f2fb9da69c5059efe18ff373
->>>>>>> 0e7a5fd40cbaa79ad26d61a8f1f45513bf791522
  *     },
  *     ...<string, ExtensionType|array{ // extra keys must follow the when@%env% pattern or match an extension alias
  *         imports?: ImportsConfig,
