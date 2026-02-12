@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Platforme;
+use App\Repository\FilmRepository;
 use App\Repository\PlatformeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,12 +21,13 @@ final class PlatformesController extends AbstractController
         ]);
     }
      #[Route('/platformes/{id}', name: 'show_platforme')]
-    public function show(PlatformeRepository $platRepo): Response
+    public function show(Platforme $platform, FilmRepository $filmRepo): Response
     {
-
-    $platforms = $platRepo->findAll();
+        
+        $films = $filmRepo->findByPlatform($platform->getId());
         return $this->render('platformes/show.html.twig', [
-            'platforms' => $platforms,
+            'platform' => $platform,
+            'films' => $films
         ]);
     }
 }
