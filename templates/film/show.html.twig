@@ -1,18 +1,37 @@
-<h1>{{ film.title }}</h1>
+{% extends 'base.html.twig' %}
 
-<p>{{ film.synopsis }}</p>
-<p>Année : {{ film.releaseYear }}</p>
+{% block title %}{{ film.title }}{% endblock %}
 
-<h3>Disponible sur :</h3>
+{% block body %}
 
-<ul>
-    {% for platforme in film.platformes %}
-        <li>
-            <a href="{{ platforme.url }}" target="_blank">
-                {{ platforme.name }}
-            </a>
-        </li>
+    <h1>{{ film.title }}</h1>
+
+    <p><strong>Année :</strong> {{ film.releaseYear }}</p>
+
+    <h3>Synopsis</h3>
+    <p>
+        {{ film.synopsis ?: "Aucun synopsis disponible." }}
+    </p>
+
+    <h3>Disponible sur :</h3>
+
+    {% if film.platformes|length > 0 %}
+        <ul>
+            {% for platforme in film.platformes %}
+                <li>
+                    <a href="{{ platforme.url }}" target="_blank">
+                        {{ platforme.name }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
     {% else %}
-        <li>Aucune plateforme</li>
-    {% endfor %}
-</ul>
+        <p>Aucune plateforme renseignée</p>
+
+    {% endif %}
+
+    <p>
+        <a href="{{ path('film_index_public') }}">← Retour à la liste</a>
+    </p>
+
+{% endblock %}
