@@ -15,7 +15,7 @@ class FilmCrudController extends AbstractCrudController
         return Film::class;
     }
 
-    /*
+    
     public function configureFields(string $pageName): iterable
     {
         return [
@@ -24,5 +24,5 @@ class FilmCrudController extends AbstractCrudController
             TextEditorField::new('description'),
         ];
     }
-    */
+    
 }
