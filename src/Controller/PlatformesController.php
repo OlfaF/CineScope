@@ -14,16 +14,17 @@ final class PlatformesController extends AbstractController
     #[Route('/platformes', name: 'app_platformes')]
     public function index(PlatformeRepository $platRepo): Response
     {
+        $platforms = $platRepo->findAll();
 
-    $platforms = $platRepo->findAll();
         return $this->render('platformes/index.html.twig', [
             'platforms' => $platforms,
         ]);
     }
-     #[Route('/platformes/{id}', name: 'show_platforme')]
+
+    #[Route('/platformes/{id}', name: 'show_platforme')]
     public function show(Platforme $platform, FilmRepository $filmRepo): Response
     {
-        
+
         $films = $filmRepo->findByPlatform($platform->getId());
         return $this->render('platformes/show.html.twig', [
             'platform' => $platform,
