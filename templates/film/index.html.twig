@@ -3,8 +3,8 @@
 {% block title %}Films{% endblock %}
 
 {% block body %}
-        <h1>Films</h1>
-    <div style="display: flex;">
+    <h1>Films</h1>
+    <div style="display: flex; justify-content: space-evenly;">
         {% for film in films %}
             <div style="border: 1px solid white; padding: 1rem;">
                 <p>{{ film.title }}</p>

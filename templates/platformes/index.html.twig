@@ -18,8 +18,7 @@
             <tr>
                 <th>{{ platform.name }}</th>
                 <td>{{ platform.url }}</td>
-                <td>{{ platform.logo }}</td>
-                <td>
+                <td><img style="width: 40px;" src="{{ asset('uploads/logos/' ~ platform.logo) }}" alt="{{ platform.logo }}"></td>                <td>
                     <a href="{{ path('show_platforme',{'id':platform.id}) }}">Voir les films</a>
                 </td>
             </tr>

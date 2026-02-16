@@ -3,26 +3,14 @@
 {% block title %}{{platform.name}}{% endblock %}
 
 {% block body %}
-<h1>Films dispo sur {{platform.n ame}}</h1>
-<table>
-    <thead>
-        <tr>
-            <th scope="col">Title</th>
-            <th scope="col">synopsis</th>
-            <th scope="col">year</th>
-        </tr>
-    </thead>
-    <tbody>
+<h1>Films dispo sur {{platform.name}}</h1>
+
         {% for film in films %}
-
-        <tr>
-            <th>{{film.title}}</th>
-            <td>{{film.synopsis}}</td>
-            <td>{{film.releaseYear}}</td>
-        </tr>
+    <div style="padding: 1rem; width: fit-content; border: 1px solid white; text-align: center">
+        <h2>{{film.title}}</h2>
+        <p>{{film.synopsis}}</p>
+        <p>{{film.releaseYear}}</p>
+    </div>
         {% endfor %}
-    </tbody>
-
-</table>
 
 {% endblock %}
