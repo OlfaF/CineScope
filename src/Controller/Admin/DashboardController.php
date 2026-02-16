@@ -28,6 +28,11 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
+
+     
+        // Lien vers la page d'accueil publique (en haut du menu)
+        yield MenuItem::linkToRoute('Accueil', 'fa fa-home', 'app_home');
+        
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
 
         yield MenuItem::linkToCrud('Films', 'fas fa-film', Film::class);
