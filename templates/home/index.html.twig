@@ -28,6 +28,16 @@
                 <a href="{{ path('app_logout') }}">Se déconnecter</a>
             </p>
         {% endif %}
+
+        {% for film in films %}
+            <div style="width: 200px; text-align: center; border: 1px solid white;">
+                <h1>{{ film.title }}</h1>
+                <hr>
+                <p>{{ film.synopsis }}</p>
+                <hr>
+                <p>{{ film.releaseYear }}</p>
+            </div>
+        {% endfor %}
     </section>
 
 {% endblock %}
