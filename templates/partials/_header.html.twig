@@ -21,10 +21,15 @@
                 </div>
             {% else %}
                 <div style="display: flex; flex-direction: row-reverse; gap: 2rem; align-items: center;">
-                    <p>{{ app.user.email }}</p>
                     {% if app.user.avatar %}
-                        <img src="{{ asset('uploads/avatars/' ~ app.user.avatar) }}" width="100">
+                        <img
+                            src="{{ asset('uploads/avatars/' ~ app.user.avatar) }}"
+                            width="30"
+                            height="30"
+                            style="border-radius: 50%; object-fit: cover;"
+                        >
                     {% endif %}
+                    <p>{{ app.user.email }}</p>
                     <li><a href="{{ path('app_logout') }}">Se déconnecter</a></li>
                 </div>
             {% endif %}
