@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil | CineScope{% endblock %}
+
+{% block body %}
+
+    <h1>Films dispo sur {{platform.name}}</h1>
+    <table>
+        <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">synopsis</th>
+            <th scope="col">year</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for film in films %}
+
+            <tr>
+                <th>{{film.title}}</th>
+                <td>{{film.synopsis}}</td>
+                <td>{{film.releaseYear}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+
+{% endblock %}
