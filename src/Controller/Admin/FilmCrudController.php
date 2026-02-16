@@ -27,5 +27,5 @@ class FilmCrudController extends AbstractCrudController
         yield IntegerField::new('releaseYear', 'Année de sortie');
 
   
-    }
+     }
 }
