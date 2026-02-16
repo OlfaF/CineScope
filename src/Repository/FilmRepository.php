@@ -30,6 +30,16 @@ class FilmRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    public function findByPlatformQuery($idPlat)
+    {
+        return $this->createQueryBuilder('f')
+            ->innerJoin('f.platformes', 'p')
+            ->andWhere('p.id = :id')
+            ->setParameter('id', $idPlat)
+            ->orderBy('f.id', 'ASC')
+            ->getQuery();
+    }
+
     //    public function findOneBySomeField($value): ?Film
     //    {
     //        return $this->createQueryBuilder('f')
