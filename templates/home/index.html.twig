@@ -1,7 +1,33 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Homepage{% endblock %}
+{% block title %}Accueil | CineScope{% endblock %}
 
 {% block body %}
+
+    <section>
+        <h1>🎬 CineScope</h1>
+
+        <p>
+            Bienvenue sur CineScope, votre plateforme comme Netflix, mais en moins bien.
+        </p>
+
+        <p>
+            <a href="{{ path('film_index_public') }}">
+                Voir tous les films
+            </a>
+        </p>
+
+        {% if not app.user %}
+            <p>
+                <a href="{{ path('app_register') }}">Créer un compte</a>
+                <a href="{{ path('app_login') }}">Se connecter</a>
+            </p>
+        {% else %}
+            <p>
+                Connecté en tant que {{ app.user.email }}
+                <a href="{{ path('app_logout') }}">Se déconnecter</a>
+            </p>
+        {% endif %}
+    </section>
 
 {% endblock %}
