@@ -48,7 +48,6 @@ class Platforme
     public function setName(string $name): static
     {
         $this->name = $name;
-
         return $this;
     }
 
@@ -60,7 +59,6 @@ class Platforme
     public function setUrl(string $url): static
     {
         $this->url = $url;
-
         return $this;
     }
 
@@ -72,7 +70,6 @@ class Platforme
     public function setLogo(string $logo): static
     {
         $this->logo = $logo;
-
         return $this;
     }
 
@@ -101,5 +98,10 @@ class Platforme
         }
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->name ?? '';
     }
 }

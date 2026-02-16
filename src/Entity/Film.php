@@ -49,7 +49,6 @@ class Film
     public function setTitle(string $title): static
     {
         $this->title = $title;
-
         return $this;
     }
 
@@ -61,7 +60,6 @@ class Film
     public function setSynopsis(?string $synopsis): static
     {
         $this->synopsis = $synopsis;
-
         return $this;
     }
 
@@ -73,7 +71,6 @@ class Film
     public function setReleaseYear(int $releaseYear): static
     {
         $this->releaseYear = $releaseYear;
-
         return $this;
     }
 
@@ -97,7 +94,11 @@ class Film
     public function removePlatforme(Platforme $platforme): static
     {
         $this->platformes->removeElement($platforme);
-
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->title ?? '';
     }
 }
