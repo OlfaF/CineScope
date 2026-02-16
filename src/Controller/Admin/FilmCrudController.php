@@ -21,7 +21,7 @@ class FilmCrudController extends AbstractCrudController
         return [
             IdField::new('id'),
             TextField::new('title'),
-            TextEditorField::new('description'),
+            TextEditorField::new('synopsis'),
         ];
     }
     
