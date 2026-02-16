@@ -8,7 +8,7 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: #0f0f14;
+    background: rgb(70, 49, 70);
     color: #f1f1f1;
 }
 
@@ -28,7 +28,7 @@ h1 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 40px;
-    color: #ff4757;
+    color: #259fa3;
 }
 
 /* Cartes films */
@@ -39,7 +39,7 @@ h1 {
 }
 
 .film-card {
-    background: #1c1c24;
+    background: white;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
@@ -65,7 +65,7 @@ h1 {
 .btn {
     display: inline-block;
     padding: 8px 14px;
-    background: #ff4757;
+    background: #259fa3;;
     color: white;
     text-decoration: none;
     border-radius: 6px;
@@ -73,7 +73,7 @@ h1 {
 }
 
 .btn:hover {
-    background: #ff6b81;
+    background: #259fa3;
 }
 
 /* Pagination */
@@ -94,7 +94,7 @@ h1 {
 }
 
 .pagination .current {
-    background: #ff4757;
+    background: #259fa3;
 }
 
 /* Avatar */
