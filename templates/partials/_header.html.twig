@@ -1,11 +1,30 @@
-<nav>
+<nav style="background-color: #0a53be; display: flex; justify-content: space-between;">
     <div>
         <h1>🎬 CineScope</h1>
     </div>
-    <div>
-        <ul>
-            <li><a href="{{ path('film_index_public') }}">Films</a></li>
-            <li></li>
+    <div style="display: flex;">
+        <ul style="display: flex; justify-content: space-between; gap: 2rem;">
+            <div style="display: flex; align-items: center; gap: 2rem;">
+                <li><a href="{{ path('app_home') }}">Home</a></li>
+                <li><a href="{{ path('film_index_public') }}">Films</a></li>
+                <li><a href="{{ path('app_platformes') }}">Plateformes</a></li>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <li>
+                        <a href="{{ path('admin') }}">Dashboard admin</a>
+                    </li>
+                {% endif %}
+            </div>
+            {% if not app.user %}
+                <div style="display: flex; gap: 2rem; align-items: center;">
+                    <li><a href="{{ path('app_register') }}">Créer un compte</a></li>
+                    <li><a href="{{ path('app_login') }}">Se connecter</a></li>
+                </div>
+            {% else %}
+                <div style="display: flex; flex-direction: row-reverse; gap: 2rem; align-items: center;">
+                    <p>{{ app.user.email }}</p>
+                    <li><a href="{{ path('app_logout') }}">Se déconnecter</a></li>
+                </div>
+            {% endif %}
         </ul>
     </div>
 
@@ -14,15 +33,13 @@
 
     </p>
 
-    {% if not app.user %}
-        <p>
-            <a href="{{ path('app_register') }}">Créer un compte</a>
-            <a href="{{ path('app_login') }}">Se connecter</a>
-        </p>
-    {% else %}
-        <p>
-            Connecté en tant que {{ app.user.email }}
-            <a href="{{ path('app_logout') }}">Se déconnecter</a>
-        </p>
-    {% endif %}
+    {#    {% if not app.user %} #}
+    {#        <p> #}
+    {#            <a href="{{ path('app_login') }}">Se connecter</a> #}
+    {#        </p> #}
+    {#    {% else %} #}
+    {#        <p> #}
+    {#            <a href="{{ path('app_logout') }}">Se déconnecter</a> #}
+    {#        </p> #}
+    {#    {% endif %} #}
 </nav>

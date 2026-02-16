@@ -3,3 +3,15 @@ body {
     color: white;
     font-family: "Courier New";
 }
+
+a {
+    text-decoration: none;
+}
+
+nav ul li a {
+    color: white;
+}
+
+ul {
+    list-style: none;
+}

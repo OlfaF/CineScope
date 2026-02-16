@@ -3,29 +3,29 @@
 {% block title %}Platformes{% endblock %}
 
 {% block body %}
-<h1>Platformes</h1>
-<table>
-    <thead>
+    <h1>Platformes</h1>
+    <table style="border: 1px solid white; width: 100%; text-align: center">
+        <thead>
         <tr>
             <th scope="col">name</th>
             <th scope="col">url</th>
             <th scope="col">logo</th>
             <th scope="col">films</th>
         </tr>
-    </thead>
-    <tbody>
+        </thead>
+        <tbody>
         {% for platform in platforms %}
-        <tr>
-            <th>{{platform.name}}</th>
-            <td>{{platform.url}}</td>
-            <td>{{platform.logo}}</td>
-            <td>
-                <a href="{{path('show_platforme',{'id':platform.id})}}">Voir les films</a>
-            </td>
-        </tr>
+            <tr>
+                <th>{{ platform.name }}</th>
+                <td>{{ platform.url }}</td>
+                <td>{{ platform.logo }}</td>
+                <td>
+                    <a href="{{ path('show_platforme',{'id':platform.id}) }}">Voir les films</a>
+                </td>
+            </tr>
         {% endfor %}
-    </tbody>
+        </tbody>
 
-</table>
+    </table>
 
 {% endblock %}
