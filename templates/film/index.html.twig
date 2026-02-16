@@ -7,9 +7,9 @@
     <div style="display: flex; justify-content: space-evenly;">
         {% for film in films %}
             <div style="border: 1px solid white; padding: 1rem;">
-                <p>{{ film.title }}</p>
-                <p>{{ film.releaseYear }}</p>
-                <a href="{{ path('film_show', {id: film.id}) }}">{{ film.title }}</a>
+                <h1>{{ film.title }}</h1>
+                <h2>{{ film.releaseYear }}</h2>
+                <a style="color: white;" href="{{ path('film_show', {id: film.id}) }}">Voir les détails</a>
             </div>
         {% endfor %}
     </div>

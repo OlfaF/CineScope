@@ -7,9 +7,9 @@
 <div style="display: flex; gap: 2rem;">
     {% for film in films %}
         <div style="padding: 1rem; width: fit-content; border: 1px solid white; text-align: center">
-            <h2>{{ film.title }}</h2>
+            <h1>{{ film.title }}</h1>
+            <h2>{{ film.releaseYear }}</h2>
             <p>{{ film.synopsis }}</p>
-            <p>{{ film.releaseYear }}</p>
         </div>
     {% endfor %}
 </div>
