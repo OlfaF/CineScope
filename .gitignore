@@ -24,3 +24,7 @@
 /assets/vendor/
 ###< symfony/asset-mapper ###
 /migrations/
+
+
+ .DS_Store
+ .idea/*
