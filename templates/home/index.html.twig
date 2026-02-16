@@ -5,49 +5,20 @@
 {% block body %}
 
     <section>
-        <h1>🎬 CineScope</h1>
-
         <p>
             Bienvenue sur CineScope, votre plateforme comme Netflix, mais en moins bien.
         </p>
-
-        <p>
-            <a href="{{ path('film_index_public') }}">
-                Voir tous les films
-            </a>
-        </p>
-        <p>
-            <a href="{{ path('app_platformes') }}">
-                Voir toutes les plateformes
-            </a>
-        </p>
-        {% if not app.user %}
-            <p>
-                <a href="{{ path('app_register') }}">Créer un compte</a>
-                <a href="{{ path('app_login') }}">Se connecter</a>
-            </p>
-        {% else %}
-            <p>
-                Connecté en tant que {{ app.user.email }}
-                <a href="{{ path('app_logout') }}">Se déconnecter</a>
-            </p>
-        {% endif %}
-
-        {% if is_granted('ROLE_ADMIN') %}
-            <p>
-                <a href="{{ path('admin') }}">Accéder au dashboard admin</a>
-            </p>
-        {% endif %}
-
-        {% for film in films %}
-            <div style="width: 200px; text-align: center; border: 1px solid white;">
-                <h1>{{ film.title }}</h1>
-                <hr>
-                <p>{{ film.synopsis }}</p>
-                <hr>
-                <p>{{ film.releaseYear }}</p>
-            </div>
-        {% endfor %}
+        <div style="display: flex;">
+            {% for film in films %}
+                <div style="width: 200px; text-align: center; border: 1px solid white;  margin: 0 20px">
+                    <h1>{{ film.title }}</h1>
+                    <hr>
+                    <p>{{ film.synopsis }}</p>
+                    <hr>
+                    <p>{{ film.releaseYear }}</p>
+                </div>
+            {% endfor %}
+        </div>
     </section>
 
 {% endblock %}
