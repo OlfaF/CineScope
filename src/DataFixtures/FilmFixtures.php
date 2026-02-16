@@ -12,25 +12,49 @@ class FilmFixtures extends Fixture implements DependentFixtureInterface
 {
     public function load(ObjectManager $manager): void
     {
-        $film1 = new Film();
-        $film1->setTitle('Inception');
-        $film1->setSynopsis('Un film incroyable sur les rêves.');
-        $film1->setReleaseYear(2010);
-        $film1->addPlatforme(
-            $this->getReference(PlatformeFixtures::NETFLIX_REFERENCE, Platforme::class)
-        );
+        $titres = [
+            'Inception',
+            'Interstellar',
+            'The Dark Knight',
+            'Tenet',
+            'Avatar',
+            'Gladiator',
+            'The Matrix',
+            'Fight Club',
+            'The Godfather',
+            'Joker',
+            'Parasite',
+            'Whiplash',
+            'Dune',
+            'The Prestige',
+            'Memento',
+            'The Wolf of Wall Street',
+            'Mad Max Fury Road',
+            'Blade Runner 2049',
+            'The Social Network',
+            'Shutter Island'
+        ];
 
-        $manager->persist($film1);
+        $plateformes = [
+            $this->getReference(PlatformeFixtures::NETFLIX_REFERENCE, Platforme::class),
+            $this->getReference(PlatformeFixtures::PRIME_REFERENCE, Platforme::class),
+        ];
 
-        $film2 = new Film();
-        $film2->setTitle('Interstellar');
-        $film2->setSynopsis('Un voyage spatial fascinant.');
-        $film2->setReleaseYear(2014);
-        $film2->addPlatforme(
-            $this->getReference(PlatformeFixtures::PRIME_REFERENCE, Platforme::class)
-        );
+        foreach ($titres as $index => $titre) {
+            $film = new Film();
+            $film->setTitle($titre);
+            $film->setSynopsis('Synopsis du film ' . $titre . '. Une histoire captivante.');
+            $film->setReleaseYear(rand(1990, 2023));
 
-        $manager->persist($film2);
+            shuffle($plateformes);
+            $film->addPlatforme($plateformes[0]);
+
+            if (rand(0, 1)) {
+                $film->addPlatforme($plateformes[1]);
+            }
+
+            $manager->persist($film);
+        }
 
         $manager->flush();
     }
