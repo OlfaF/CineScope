@@ -16,7 +16,11 @@
                 Voir tous les films
             </a>
         </p>
-
+        <p>
+            <a href="{{ path('app_platformes') }}">
+                Voir toutes les plateformes
+            </a>
+        </p>
         {% if not app.user %}
             <p>
                 <a href="{{ path('app_register') }}">Créer un compte</a>
