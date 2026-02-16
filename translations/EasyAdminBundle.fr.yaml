@@ -1,0 +1,14 @@
+# translations/EasyAdminBundle.fr.yaml
+
+# Pages
+new.page_title: "Ajouter un film"
+edit.page_title: "Modifier le film"
+list.page_title: "Liste des films"
+
+# Actions
+action.new: "Ajouter"
+action.edit: "Modifier"
+action.delete: "Supprimer"
+action.save: "Enregistrer"
+action.cancel: "Annuler"
+action.save_and_continue: "Enregistrer et continuer"
