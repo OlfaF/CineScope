@@ -7,6 +7,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField; // <- ajouté
 
 class FilmCrudController extends AbstractCrudController
 {
@@ -15,14 +16,19 @@ class FilmCrudController extends AbstractCrudController
         return Film::class;
     }
 
-    
     public function configureFields(string $pageName): iterable
     {
-        return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('synopsis'),
+        $fields = [
+            TextField::new('title', 'Titre'),
+            TextEditorField::new('synopsis', 'Synopsis'),
+            IntegerField::new('releaseYear', 'Année de sortie'), // <- ajouté
         ];
+
+        if ($pageName === 'index') {
+            // IdField seulement pour la page index (liste)
+            array_unshift($fields, IdField::new('id'));
+        }
+
+        return $fields;
     }
-    
 }
